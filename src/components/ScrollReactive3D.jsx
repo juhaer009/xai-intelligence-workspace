@@ -12,21 +12,18 @@ const ScrollReactiveCube = ({ scrollProgress }) => {
     const time = state.clock.elapsedTime;
     const mesh = meshRef.current;
     
-    // Smoother scroll-driven transformations
-    const scrollInfluence = scrollProgress * 2 - 1; // -1 to 1
-    const smoothScroll = Math.sin(scrollInfluence * Math.PI * 0.5); // Sine easing
+    const scrollInfluence = scrollProgress * 2 - 1;
+    const smoothScroll = Math.sin(scrollInfluence * Math.PI * 0.5);
     
     // Rotation based on scroll and time - smoother
     mesh.rotation.x = time * 0.3 + smoothScroll * Math.PI * 0.8;
     mesh.rotation.y = time * 0.2 + smoothScroll * Math.PI * 1.2;
     mesh.rotation.z = smoothScroll * 0.3;
     
-    // Scale transformation - more gradual
     const baseScale = 1 + Math.sin(time * 0.8) * 0.05;
     const scrollScale = 1 + Math.abs(smoothScroll) * 0.4;
     mesh.scale.setScalar(baseScale * scrollScale);
     
-    // Position - smoother movement
     mesh.position.y = Math.sin(time * 0.6 + smoothScroll * 1.5) * 0.3;
     mesh.position.x = smoothScroll * 1.5;
   });
@@ -44,7 +41,7 @@ const ScrollReactiveCube = ({ scrollProgress }) => {
   );
 };
 
-// Orbiting particles with smoother animation
+
 const OrbitingParticles = ({ scrollProgress }) => {
   const groupRef = useRef();
   
@@ -53,6 +50,7 @@ const OrbitingParticles = ({ scrollProgress }) => {
     
     const time = state.clock.elapsedTime;
     const smoothScroll = Math.sin((scrollProgress * 2 - 1) * Math.PI * 0.5);
+    
     
     groupRef.current.rotation.y = time * 0.15 + smoothScroll * Math.PI * 0.8;
     
@@ -103,7 +101,7 @@ const ScrollReactive3D = () => {
     offset: ["start end", "end start"]
   });
   
-  // Much smoother scroll progress with refined spring physics
+
   const smoothProgress = useSpring(scrollYProgress, {
     stiffness: 60,
     damping: 40,
@@ -127,7 +125,7 @@ const ScrollReactive3D = () => {
       className="relative h-screen flex items-center justify-center bg-deep-space overflow-hidden"
     >
       {/* Consistent Background with other sections */}
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-base-300/20 to-deep-space" />
+      <div className="absolute inset-0 bg-linear-to-b from-deep-space via-base-300/20 to-deep-space" />
       <div className="absolute inset-0 bg-gradient-radial from-neon-blue/5 via-transparent to-transparent" />
       
       {/* Subtle animated background elements */}
@@ -153,9 +151,9 @@ const ScrollReactive3D = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-          className="text-6xl md:text-8xl font-bold text-transparent bg-gradient-to-r from-cyan-glow via-neon-blue to-soft-purple bg-clip-text"
+          className="text-6xl md:text-8xl font-bold bg-clip-text"
         >
-          NEXUS
+          XAI
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}

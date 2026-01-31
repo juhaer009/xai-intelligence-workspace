@@ -232,7 +232,7 @@ const HeroSection = () => {
   return (
     <section 
       ref={heroRef}
-      className="relative h-[60vh] w-full overflow-hidden bg-gradient-to-br from-deep-space via-deep-space to-base-300"
+      className="relative h-[60vh] w-full overflow-hidden bg-linear-to-br from-deep-space via-deep-space to-base-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -260,7 +260,7 @@ const HeroSection = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.8 }}
-              className="block text-transparent bg-gradient-to-r from-neon-blue via-cyan-glow to-soft-purple bg-clip-text"
+              className="block text-transparent bg-linear-to-r from-neon-blue via-cyan-glow to-soft-purple bg-clip-text"
             >
               Raw Data
             </motion.span>
@@ -285,7 +285,7 @@ const HeroSection = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0, 229, 255, 0.5)" }}
               whileTap={{ scale: 0.95 }}
-              className="btn btn-primary btn-lg text-lg px-8 py-4 bg-gradient-to-r from-neon-blue to-cyan-glow border-none text-deep-space font-semibold pointer-events-auto"
+              className="btn btn-primary btn-lg text-lg px-8 py-4 bg-linear-to-r from-neon-blue to-cyan-glow border-none text-deep-space font-semibold pointer-events-auto"
             >
               Experience the Transformation
             </motion.button>
@@ -318,7 +318,7 @@ const HeroSection = () => {
       </div>
 
       {/* Gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-deep-space/60 via-transparent to-deep-space/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-t from-deep-space/60 via-transparent to-deep-space/30 pointer-events-none" />
     </section>
   );
 };
