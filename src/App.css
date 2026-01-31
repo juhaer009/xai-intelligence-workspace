@@ -1,0 +1,111 @@
+/* Custom styles for the Xai Intelligence Workspace */
+.navbar {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(31, 107, 255, 0.2);
+}
+
+/* Smooth transitions for interactive elements */
+.btn, .card, .menu li a {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Custom hover effects */
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 229, 255, 0.1);
+}
+
+/* Glow effects for buttons */
+.btn-primary:hover {
+  box-shadow: 0 0 20px rgba(31, 107, 255, 0.5);
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 0 20px rgba(123, 97, 255, 0.5);
+}
+
+.btn-accent:hover {
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+/* Responsive text sizing */
+@media (max-width: 768px) {
+  .navbar-start .btn-ghost {
+    font-size: 0.9rem;
+  }
+}
+
+/* Custom focus states */
+.input:focus {
+  box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.3);
+}
+
+/* Gradient text effect for title */
+.gradient-text {
+  background: linear-gradient(135deg, #1F6BFF, #00E5FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtle animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Dashboard specific animations */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Chart animations */
+@keyframes chart-draw {
+  from {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+}
+
+.chart-line {
+  animation: chart-draw 2s ease-in-out;
+}
+
+/* Scrollbar styling for dashboard */
+.dashboard-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-track {
+  background: rgba(11, 15, 26, 0.5);
+}
+
+.dashboard-scroll::-webkit-scrollbar-thumb {
+  background: rgba(31, 107, 255, 0.3);
+  border-radius: 3px;
+}
+
+.dashboard-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(31, 107, 255, 0.5);
+}
