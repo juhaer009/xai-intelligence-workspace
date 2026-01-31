@@ -91,6 +91,8 @@ The application follows a component-driven architecture with emphasis on:
 
 ## ⚡ Key Animation & Interaction Decisions
 
+> **📋 Detailed Technical Documentation**: For an in-depth explanation of animation decisions, technical implementation details, and design rationale, view the comprehensive documentation: [Animation & Interaction Design Document](https://drive.google.com/file/d/176byaVGAuaIkxLrtOWORHf5ciN3nrtNH/view?usp=sharing)
+
 ### 1. Hero Section - Particle Transformation
 **Technical Implementation**: Three.js particle system with mathematical precision
 - **Physics**: Particles follow orbital mechanics with `sin/cos` positioning
